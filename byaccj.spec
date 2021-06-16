@@ -1,12 +1,12 @@
 Name:		byaccj
 Version:	1.15
-Release:	19
+Release:	20
 Summary:	BYACC/J Java extension
 License:	Public Domain
 URL:		http://byaccj.sourceforge.net/
 Source0:	http://sourceforge.net/projects/byaccj/files/byaccj/1.15/byaccj1.15_src.tar.gz
 
-BuildRequires:  make gdb-headless
+BuildRequires:  make gdb-headless gcc
 
 %description
 BYACC/J is an extension of the Berkeley v 1.8 YACC-compatible parser generator.
@@ -44,6 +44,10 @@ install -p -m 755 src/yacc %{buildroot}%{_bindir}/%{name}
 %doc docs/* src/README
 
 %changelog
+* Mon May 31 2021 baizhonggui <baizhonggui@huawei.com> - 1.15-20
+- Fix building error: cc: No such file or directory
+- Add gcc in BuildRequires
+
 * Sun Mar 15 2020 zhangtao<zhangtao221@huawei.com> - 1.15-19
 - Package init
 
