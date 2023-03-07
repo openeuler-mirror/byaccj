@@ -1,10 +1,11 @@
 Name:		byaccj
 Version:	1.15
-Release:	20
+Release:	21
 Summary:	BYACC/J Java extension
 License:	Public Domain
 URL:		http://byaccj.sourceforge.net/
 Source0:	http://sourceforge.net/projects/byaccj/files/byaccj/1.15/byaccj1.15_src.tar.gz
+Patch0:         fix-add-the-compilation-option-pie.patch
 
 BuildRequires:  make gdb-headless gcc
 
@@ -44,6 +45,9 @@ install -p -m 755 src/yacc %{buildroot}%{_bindir}/%{name}
 %doc docs/* src/README
 
 %changelog
+* Fri Mar 03 2023 wulei <wulei80@h-partners.com> - 1.15-21
+- Add the compilation option pie
+
 * Mon May 31 2021 baizhonggui <baizhonggui@huawei.com> - 1.15-20
 - Fix building error: cc: No such file or directory
 - Add gcc in BuildRequires
